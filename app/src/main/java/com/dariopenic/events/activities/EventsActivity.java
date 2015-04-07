@@ -97,6 +97,9 @@ public class EventsActivity extends ActionBarActivity implements EventView, Even
     }
 
 
+    /**
+     * Animation used for translating toolbar from negative margin (height of toolbar) to zero
+     */
     private void startIntroAnimation() {
         int actionbarSize = DisplayUtils.dpToPx(this, 56);
         toolbar.setTranslationY(-actionbarSize);

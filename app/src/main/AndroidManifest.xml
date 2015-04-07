@@ -19,10 +19,7 @@
         </activity>
         <activity
             android:name=".activities.EventDetailsActivity"
-            android:theme="@style/AppTheme.ActivityTransparent">
-
-
-        </activity>
+            android:theme="@style/AppTheme.ActivityTransparent" />
     </application>
 
 </manifest>

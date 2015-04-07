@@ -5,6 +5,7 @@
     <color name="style_color_primary_dark">#009FC2</color>
     <color name="style_color_accent">#009FC2</color>
 
+    <color name="event_details_status_bar">#44000000</color>
 
     <color name="text_gray">#CECECE</color>
     <color name="text_pink">#FE1677</color>
