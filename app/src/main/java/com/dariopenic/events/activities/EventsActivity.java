@@ -11,6 +11,8 @@ import com.dariopenic.events.utils.DisplayUtils;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -49,10 +51,6 @@ public class EventsActivity extends ActionBarActivity implements EventView, Even
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
-//        getWindow().setExitTransition(new Explode());
-//        getWindow().setAllowEnterTransitionOverlap(true);
-//        getWindow().setAllowReturnTransitionOverlap(true);
 
         setContentView(R.layout.activity_events);
         ButterKnife.inject(this);
@@ -66,9 +64,17 @@ public class EventsActivity extends ActionBarActivity implements EventView, Even
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+
     private void setupToolbar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
+        Drawable menuIconDrawable = getDrawable(R.drawable.ic_menu_black_24dp);
+        menuIconDrawable.setColorFilter(getResources().getColor(R.color.menu_icon_color), PorterDuff.Mode.SRC_ATOP);
+        toolbar.setNavigationIcon(menuIconDrawable);
     }
 
     private void injectLocalGraph() {

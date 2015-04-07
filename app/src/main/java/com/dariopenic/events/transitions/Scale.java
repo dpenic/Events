@@ -30,7 +30,7 @@ public class Scale extends Visibility {
     }
 
     public Animator createScaleAnimator(View view, float startScale, float endScale) {
-//        PropertyValuesHolder holderX = PropertyValuesHolder.ofFloat("scaleX", startScale, endScale);
+//        PropertyValuesHolder holderX = PropertyValuesHolder.ofFloat("scaleX", startScale, endScale); // removed scaling by X, only scaling by Y
         PropertyValuesHolder holderY = PropertyValuesHolder.ofFloat("scaleY", startScale, endScale);
         ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(view, holderY);
         animator.setDuration(300);
