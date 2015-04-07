@@ -3,13 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <View
+        android:id="@+id/bg_white"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@android:color/transparent">
-
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="match_parent"
+        android:background="@android:color/white" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,16 +21,18 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
-                androe id:src="@drawable/slint_featured"
+                android:layout_height="280dp"
+                android:src="@drawable/slint_featured"
+                android:transitionName="image"
                 android:scaleType="centerCrop" />
-
-
-
         </LinearLayout>
-
-
     </ScrollView>
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="25dip"
+        android:background="@android:color/transparent" />
 
 </RelativeLayout>

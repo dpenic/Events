@@ -9,6 +9,8 @@ import com.dariopenic.events.mvp.presenters.EventPresenter;
 import com.dariopenic.events.mvp.views.EventView;
 import com.dariopenic.events.utils.DisplayUtils;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBarActivity;
@@ -16,6 +18,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -46,6 +49,11 @@ public class EventsActivity extends ActionBarActivity implements EventView, Even
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        getWindow().requestFeature(Window.FEATURE_CONTENT_TRANSITIONS);
+//        getWindow().setExitTransition(new Explode());
+//        getWindow().setAllowEnterTransitionOverlap(true);
+//        getWindow().setAllowReturnTransitionOverlap(true);
+
         setContentView(R.layout.activity_events);
         ButterKnife.inject(this);
         injectLocalGraph();
@@ -100,7 +108,8 @@ public class EventsActivity extends ActionBarActivity implements EventView, Even
     }
 
     @Override
-    public void onItemClick(View view, int position) {
-
+    public void onItemClick(View view, ImageView imageView, int position) {
+        Intent intent = new Intent(EventsActivity.this, EventDetailsActivity.class);
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this, imageView, "image").toBundle());
     }
 }

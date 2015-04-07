@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    android:transitionOrdering="sequential">
+
+    <transition class="com.dariopenic.events.transitions.Scale">
+        <targets>
+            <target android:targetId="@id/bg_white" />
+        </targets>
+    </transition>
+
+
+</transitionSet>

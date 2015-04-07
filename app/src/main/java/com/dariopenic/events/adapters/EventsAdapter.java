@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
     public interface OnItemClickListener {
 
-        public void onItemClick(View view, int position);
+        public void onItemClick(View view, ImageView imageView, int position);
     }
 
     private static final int ANIMATED_ITEMS_COUNT = 3;
@@ -46,7 +47,7 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         final View view = LayoutInflater.from(context).inflate(R.layout.card_event, viewGroup, false);
-        return new CellEventViewHolder(view, listener<);
+        return new CellEventViewHolder(view, listener);
     }
 
     private void runEnterAnimation(View view, int position) {
@@ -88,7 +89,7 @@ public class EventsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         @Override
         public void onClick(View v) {
-            listener.onItemClick(v, getPosition());
+            listener.onItemClick(v, (ImageView) v.findViewById(R.id.ivEventPromo), getPosition());
         }
     }
 
